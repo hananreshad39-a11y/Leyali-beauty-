@@ -1,0 +1,802 @@
+/* Color Palette & Font Settings */
+:root {
+    --bg-dark: #120e0b;
+    --card-bg: #1c1511;
+    --accent-gold: #c5a880;
+    --accent-gold-hover: #b3946b;
+    --text-light: #f5ece3;
+    --text-muted: #a69688;
+    --input-border: #382c24;
+    --font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Reset Configurations */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-stack);
+    line-height: 1.6;
+}
+
+/* Helper Utilities */
+.text-center { text-align: center; }
+.section-tag {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+/* Base Components: Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
+    border: 1px solid var(--accent-gold);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-gold-hover);
+    border-color: var(--accent-gold-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--input-border);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-muted);
+}
+
+/* Top Navigation Bar */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 6%;
+    background-color: rgba(18, 14, 11, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(56, 44, 36, 0.3);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-text-inner {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+}
+
+.logo-text h1 {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.logo-text p {
+    font-size: 0.55rem;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-links a.active {
+    color: var(--accent-gold);
+}
+
+.btn-book-header {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark) !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Hero Interface Layout */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 4rem 6%;
+    gap: 4rem;
+    min-height: calc(100vh - 80px);
+}
+
+.location-tag {
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title .accent-text {
+    font-weight: 600;
+    color: var(--accent-gold);
+}
+
+.hero-description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Ambient Neon Sign Graphic Module */
+.hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.neon-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 16px;
+    padding: 3.5rem 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+}.neon-logo {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+}
+
+.neon-card h3 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 0.2rem;
+}
+
+.neon-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.neon-divider {
+    height: 1px;
+    width: 40px;
+    background-color: var(--accent-gold);
+    margin: 0 auto 1.5rem;
+}
+
+.neon-footer {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+}
+
+/* Service Offering Grid Setup */
+.services-section {
+    padding: 6rem 6%;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 6rem;
+}
+
+.service-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(56, 44, 36, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Featured Spotlight Section Layout */
+.featured-service {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(56, 44, 36, 0.5);
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 350px;
+}
+
+.featured-content {
+    padding: 3rem;
+}
+
+.featured-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.featured-content p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* E-Commerce Product Shop Architecture */
+.shop-section {
+    padding: 6rem 6%;
+    border-top: 1px solid var(--input-border);
+}
+
+.shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+}
+
+.shop-subtitle {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-top: 0.5rem;
+}
+
+.view-all {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Dynamic Filter Controls */
+.filter-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.tag {
+    background-color: transparent;
+    border: 1px solid var(--input-border);
+    color: var(--text-light);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.tag.active, .tag:hover {
+    background-color: var(--text-light);
+    color: var(--bg-dark);
+    border-color: var(--text-light);
+}
+
+/* Product Cards Showcase Matrix */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(56, 44, 36, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    height: 240px;
+    background-color: #261e18;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-category {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}.product-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(56, 44, 36, 0.3);
+}
+
+.price-status {
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+}
+
+.btn-order {
+    background-color: transparent;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    padding: 0.4rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-order:hover {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
+}
+
+/* Call-to-Action Announcement Bar */
+.cta-banner {
+    background-color: #1a130e;
+    padding: 5rem 6%;
+    text-align: center;
+    border-top: 1px solid var(--input-border);
+    border-bottom: 1px solid var(--input-border);
+}
+
+.cta-banner h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.cta-banner p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Form Design Structure */
+.booking-section {
+    padding: 6rem 6%;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid var(--input-border);
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group textarea {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--text-light);
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+}
+
+/* Horizontal Radio Toggle Matrix */
+.radio-tile-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.radio-tile {
+    position: relative;
+    cursor: pointer;
+}
+
+.radio-tile input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tile-label {
+    display: block;
+    text-align: center;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--input-border);
+    padding: 1rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    color: var(--text-muted);
+}
+
+.radio-tile input:checked + .tile-label {
+    border-color: var(--accent-gold);
+    color: var(--bg-dark);
+    background-color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.btn-submit {
+    background-color: #efe2d5;
+    color: #120e0b;
+    border: none;
+    padding: 1.1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: var(--text-light);
+}
+
+/* Structural Site Footer */
+.main-footer {
+    background-color: #0d0a08;
+    padding: 5rem 6% 2rem;
+    border-top: 1px solid var(--input-border);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.footer-brand h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.footer-service-type {
+    color: var(--text-muted) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-size: 0.95rem !important;
+}.footer-links h3 {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-links a, .footer-links li {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--accent-gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(56, 44, 36, 0.3);
+    padding-top: 2rem;
+    text-align: left;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Fluid Responsive Breakpoints */
+@media (max-width: 900px) {
+    .hero-section, .featured-service {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .hero-image-container {
+        order: -1;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .featured-content {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        padding: 1rem 4%;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a:not(.btn-book-header) {
+        display: none;
+    }
+    
+    .radio-tile-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-container {
+        padding: 1.5rem;
+
+    }}
+    .circle-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents the image from stretching */
+    border-radius: 50%;
+    display: block;
+}
+
+/* 1. Controls the size of the header logo circle */
+.logo-icon {
+    width: 45px;         /* Decreased size so it isn't too big */
+    height: 45px;        /* Must match width exactly to stay a perfect circle */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--accent-gold);
+    border-radius: 50%;
+}
+
+/* 2. Controls the size of the big card logo circle */
+.neon-logo {
+    width: 70px;         /* Adjust this if you want it smaller or larger on the card */
+    height: 70px;        /* Must match width exactly to stay a perfect circle */
+    margin: 0 auto 1.5rem; /* Keeps it centered in the card */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--accent-gold);
+    border-radius: 50%;
+} /* --- COMPLETE LOGO CIRCLING FIX --- */
+
+/* 1. Header Logo Container (Top Left) */
+.logo-icon {
+    width: 45px !important;
+    height: 45px !important;
+    max-width: 45px !important;
+    max-height: 45px !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--accent-gold) !important;
+    overflow: hidden !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* 2. Banner/Card Logo Container (The Large Middle Oval Sign) */
+.neon-logo {
+    width: 80px !important;
+    height: 80px !important;
+    max-width: 80px !important;
+    max-height: 80px !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--accent-gold) !important;
+    margin: 0 auto 1.5rem !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: var(--bg-dark); /* Keeps background clean behind image */
+}
+
+/* 3. The Image Inside Both Circles */
+.circle-logo-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: cover !important; /* Crops the wide image edges into a perfect square fit */
+    border-radius: 50% !important;
+    display: block !important;
+}
+/* --- HERO LAYOUT ALIGNMENT FIX --- */
+.hero-section {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 2rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+}
+
+/* Forces the text column to only take up half the width */
+.hero-content {
+    flex: 1 !important;
+    max-width: 50% !important;
+}
+
+/* Forces the card column to stay on the right side */
+.hero-image-container {
+    flex: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 45% !important;
+}
